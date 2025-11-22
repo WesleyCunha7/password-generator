@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="src/javascript/styles/styles.css">
+  <title>Password Generator</title>
+</head>
+<body>
+    <div id ="container">
+       <img src="images/illustration.svg" id="password_img" alt="">
+        <h1 id="title">Generate Password</h1>
+
+        <div id="password_container">
+          <span id="password">Vai curintia</span>
+          <button id="copy">
+             <i class="fa-solid fa-copy"></i>
+          </button>
+        </div>
+        <div id="password_items">
+          <div class="items">
+            <input id="size" name="size" type="number">
+            <label for="size">
+              Number of characters
+            </label>
+          </div>
+          <div class="item">
+            <input type="checkbox" name="include_uppercase" id="include_uppercase">
+            <label for="include_uppercase">
+              Include Uppercase Letters
+            </label>
+        </div>
+        <div class="item">
+            <input type="checkbox" name="include_lowercase" id="include_lowercase">
+            <label for="include_lowercase">
+              Include Lowercase Letters
+            </label>
+        </div>
+        <div class="item">
+            <input type="checkbox" name="include_number" id="include_number">
+            <label for="include_number">
+              Include Numbers
+            </label>
+        </div>
+        <div class="item">
+            <input type="checkbox" name="include_special_character" id="include_special_character">
+            <label for="include_special_character">
+              Include Special Characters
+            </label>
+        </div>
+        <button id="Generate">
+          Generate Password
+        </button>
+    </div>
+</body>
+</html>
