@@ -57,8 +57,13 @@ function generatePassword(size, charTypes) {
 }
 
 document.querySelector('#Generate').addEventListener('click', function () {
-  console.log(generatePassword(getPasswordLength(), getChartTypes()));
+  const size = getPasswordSize();
+  const charTypes = getChartTypes();
+
+  const passwordGenerated = generatePassword(size, charTypes);
+  document.querySelector('#password').textContent= passwordGenerated;
 });
 
  
+
 
