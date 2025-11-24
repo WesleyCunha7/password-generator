@@ -29,8 +29,9 @@ function getPasswordLength() {
   const size = Number(document.querySelector('#size').value);
 
   if (isNaN(size) || size < 4 || size > 128) {
-    alert('Please enter a valid password length between 4 and 128.');
-    return 0; // evita loop infinito
+      
+    message('Invalid size. Please enter a number between 4 and 128.', '#dc2626')
+  
   }
 
   return size;
@@ -39,10 +40,10 @@ function getPasswordLength() {
 function randomCharTypes(charTypes) {
   const randomIndex = Math.floor(Math.random() * charTypes.length);
 
-  // STRING aleatória escolhida
+
   const group = charTypes[randomIndex];
 
-  // CARACTERE aleatório dessa string
+  
   return group[Math.floor(Math.random() * group.length)];
 }
 
@@ -56,17 +57,33 @@ function generatePassword(size, charTypes) {
   return passwordGenerated;
 }
 
+function message(text,background) {
+  Toastify({
+      text: text,
+      duration:3000
+      style: {
+        background: background ,
+        boxShadow: 'none' 
+      }
+    }).showToast();
+}
+
 document.querySelector('#Generate').addEventListener('click', function () {
   const size = getPasswordSize();
   const charTypes = getChartTypes();
 
   const passwordGenerated = generatePassword(size, charTypes);
 
+  if (!charType.length) {
+    message('Select at least one type of charactere.', '#dc2626);
+    return; 
+  }
   document.querySelector('#password_container').classList.add('show');
   document.querySelector('#password').textContent= passwordGenerated;
 });
 
  
+
 
 
 
